@@ -1,3 +1,19 @@
+create table diabetes (
+gender varchar not null,
+age DECIMAL not null,
+hypertension int not NULL,
+heart_disease int not null,
+smoking_history varchar not null,
+bmi DECIMAL not null,
+HbA1c_level DECIMAL not null,
+blood_glucose_level int not null,
+diabetes int not null
+);
+
+-- Check to make sure table has been successfully created
+select*
+from diabetes;
+
 -- bring up the new data base
 select *
 from diabetes;
@@ -54,6 +70,17 @@ from diabetes;
 --Results are 5.52
 
 -- Find the unique count for smoking history
+-- There are six answers for smoing history : never, current, ever, former, never, no info, not current
+select smoking_history,count(smoking_history)
+from diabetes
+group by smoking_history;
+--Results 
+-- ever = 4004
+-- no info = 35816
+-- never = 35095
+-- current = 9286
+-- former = 9352
+-- not current = 6447
 
 
 -- Find the average bmi
@@ -71,4 +98,3 @@ select max(bmi)
 from diabetes;
 -- Results are 95.69
 
--- Create a query to 
