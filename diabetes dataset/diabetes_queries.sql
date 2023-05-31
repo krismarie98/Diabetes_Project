@@ -53,12 +53,24 @@ where hypertension=1;
 -- Results are 7485
 -- Visualization created
 
+--Find the count of people with hypertension and diabetes
+select count(hypertension)
+from diabetes 
+where hypertension=1 and diabetes =1;
+--Results are 2088
+
 -- Find the count of people positive for heart disease
 select count(heart_disease)
 from diabetes 
 where heart_disease=1;
 -- Results are 3942
 -- Visualization created
+
+-- Find the count of people who have heart disease and diabetes
+select count(heart_disease)
+from diabetes 
+where heart_disease=1 and diabetes =1;
+-- Results are 1267
 
 -- The average blood glucose level
 select avg(blood_glucose_level)
